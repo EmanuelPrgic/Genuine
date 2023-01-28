@@ -1,4 +1,9 @@
 <section>
+    <style>
+        button {
+            background: black;
+        }
+    </style>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('User Information') }}
@@ -45,7 +50,7 @@
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
                 @endif
-                
+
               </select>
             <x-input-error class="mt-2" :messages="$errors->get('sex')" />
         </div>
@@ -54,14 +59,14 @@
             <select name="age" id="age">
                 @if (Auth::user()->age != null)
                 <option value="{{Auth::user()->age}}">{{Auth::user()->age}}</option>
-                @endif             
+                @endif
                 @for ($i = 18; $i < 51; $i++)
                 @if (Auth::user()->age == $i)
                     {{$i++}}
                 @endif
                 <option value="{{$i}}">{{$i}}</option>
                 @endfor
-                
+
               </select>
             <x-input-error class="mt-2" :messages="$errors->get('age')" />
         </div>
@@ -103,8 +108,8 @@
                 <option value="Married">Married</option>
                 <option value="Complicated">Complicated</option>
                 @endif
-                
-                
+
+
               </select>
             <x-input-error class="mt-2" :messages="$errors->get('relationship_status')" />
         </div>
@@ -140,22 +145,22 @@
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Other">Other</option>
-                @endif   
+                @endif
                 @if (Auth::user()->interested_in == "Women")
                 <option value="Women">Women</option>
                 <option value="Men">Men</option>
                 <option value="Other">Other</option>
-                @endif  
+                @endif
                 @if (Auth::user()->interested_in == "Other")
                 <option value="Other">Other</option>
                 <option value="Women">Women</option>
                 <option value="Men">Men</option>
-                @endif  
+                @endif
                 @if (Auth::user()->interested_in == null)
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Other">Other</option>
-                @endif    
+                @endif
               </select>
             <x-input-error class="mt-2" :messages="$errors->get('interested_in')" />
         </div>
