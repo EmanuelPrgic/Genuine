@@ -1,8 +1,10 @@
-#about-section {
+    #about-section {
     background: rgba(32, 33, 36, 0.1);
     position: relative;
 }
-
+.test {
+    background-color: lime;
+}
 .blockabout {
     padding: 20px;
     background: white;
