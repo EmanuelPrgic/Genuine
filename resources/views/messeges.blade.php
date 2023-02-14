@@ -42,7 +42,6 @@
                                 @endif
                         @endforeach
                     </div>
-    
                     <div class="card-footer">
                         <form method="POST" action="/sendMessege">
                             @csrf
@@ -55,20 +54,31 @@
                                 <button type="submit" class="btn">Send</button>
                             </div>
                         </form>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4 justify-content-center align-items-center">
+                                <a class="btn btn-xl btn-outline-dark refresh" href="/messages/{{$user->id}}">REFRESH CHAT</a>
+                            </div>
+                            <div class="col-4"></div>
                     </div>
                     </div>
                 </div></div>
             <div class="col-md-2 col-xl-2"></div>
         </div>
         </div>
-        
+
 
 
 
 @endcomponent
 
 <style>
-.chat{
+
+    .refresh {
+        font-size: 15px;
+        color: black;
+    }
+    .chat {
 margin-top: auto;
 margin-bottom: auto;
 }
